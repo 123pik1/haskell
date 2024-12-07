@@ -11,9 +11,7 @@ czyPierwsza n = n > 1 && all (\x -> n `mod` x /= 0) [2..n-1]
 
 zliczaniePierwszych :: [Int] -> Int
 zliczaniePierwszych [] = 0
-zliczaniePierwszych (x:xs) = if czyPierwsza x then 1 + zliczaniePierwszych xs else zliczaniePierwszych xs
-
-
+zliczaniePierwszych (x:xs) = if czyPierwsza x then 1 + zliczaniePierwszych xs else zliczaniePierwszych xs -- rekurencyjnie uruchamia dla kolejnych elementów listy
 
 
 main :: IO ()
