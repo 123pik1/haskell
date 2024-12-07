@@ -11,7 +11,7 @@ countTriplets n = [(x, length (pythagoreanTriplets x)) | x <- [1..n], not (null 
 
 -- Function to find the maximum count and return all x values with this count
 maxTriplets :: Int -> [Int]
-maxTriplets n = map fst $ filter ((== maxCount) . snd) tripletCounts
+maxTriplets n = map fst ( filter ((== maxCount) . snd) tripletCounts)
   where
     tripletCounts = countTriplets n
     maxCount = maximum (map snd tripletCounts)
@@ -24,4 +24,4 @@ findMaxTriplets n = maxTriplets n
 main :: IO ()
 main = do
   let n = 40
-  print $ findMaxTriplets n
+  print (findMaxTriplets n)
